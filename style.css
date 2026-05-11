@@ -17,7 +17,7 @@ body {
         /* Biar nav bisa nambah tinggi ke bawah kalau menunya turun */
         height: auto !important; 
         flex-direction: column !important; 
-        padding: 20px 0 !important;
+        padding: 9px 0 !important;
         position: fixed !important; /* Biar tetap nempel di atas saat di-scroll */
         background: #0f172a !important; /* Warna solid biar teks menu gak tabrakan sama konten */
     }
@@ -474,7 +474,7 @@ nav ul li {
 }
 
 /* --- PENGATURAN UNTUK HP (Layar di bawah 768px) --- */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
     
     /* 1. Ubah susunan slide dari samping-sampingan jadi atas-bawah */
     .hero-content, .hero-content-2 {
@@ -489,7 +489,7 @@ nav ul li {
         /* Sesuaikan ukuran foto di HP biar pas */
         width: 180px !important; 
         height: 180px !important;
-        margin-top: 10px;
+        margin-top: -700px;
     }
 
     /* 3. Kecilkan ukuran tulisan agar pas di layar HP */
