@@ -489,7 +489,7 @@ nav ul li {
         /* Sesuaikan ukuran foto di HP biar pas */
         width: 180px !important; 
         height: 180px !important;
-        margin-top: -700px;
+        margin-top: 0px;
     }
 
     /* 3. Kecilkan ukuran tulisan agar pas di layar HP */
