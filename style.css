@@ -62,7 +62,7 @@ html {
 }
 
 .highlight {
-    color: #38bdf8; /* Warna biru cerah */
+    color: #3e9ac1; /* Warna biru cerah */
 }
 
 .typing-container {
@@ -486,8 +486,10 @@ nav ul li {
 
     /* 2. Sesuaikan ukuran foto profil di HP agar tidak kebesaran */
     .profile-img img, .profile-img-2 img {
-        width: 250px !important;
-        height: auto !important;
+        /* Sesuaikan ukuran foto di HP biar pas */
+        width: 180px !important; 
+        height: 180px !important;
+        margin-top: 10px;
     }
 
     /* 3. Kecilkan ukuran tulisan agar pas di layar HP */
