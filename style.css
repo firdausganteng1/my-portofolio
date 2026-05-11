@@ -196,41 +196,6 @@ nav ul li a:hover {
     gap: 50px;
 }
 
-/* Styling Foto Slide 2 */
-.profile-img-2 img {
-    width: 350px; /* Sesuaikan ukuran */
-    height: auto;
-    border-radius: 50px;
-    border: 4px solid #38bdf8;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.3));
-    /* Efek halus agar menyatu dengan background */
-    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
-}
-
-.hero-text h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.bio-text {
-    font-size: 1.2rem;
-    color: #94a3b8;
-    max-width: 500px;
-    line-height: 1.8;
-}
-
-.special-tags {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-}
-
-.special-tags span {
-    color: #38bdf8;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
 
 .profile-img img {
     width: 180px;
@@ -260,6 +225,104 @@ nav ul li a:hover {
     color: #38bdf8;
 }
 
+h2 {
+    color: #ffffff; /* Putih terang */
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Agar teks putih lebih tegas */
+    letter-spacing: 1px;
+}
+
+/* Untuk teks "saya" dan bagian berwarna lainnya */
+.highlight {
+    color: #38bdf8; /* Warna biru cerah */
+    font-weight: 800;
+    
+    /* Efek Neon/Glow yang kuat */
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.8), 
+                 0 0 20px rgba(56, 189, 248, 0.4), 
+                 0 0 30px rgba(56, 189, 248, 0.2);
+    
+    display: inline-block; /* Agar efek transform bisa jalan */
+    transition: 0.3s;
+}
+
+/* Tambahkan sedikit efek interaksi saat judul didekati kursor */
+h2:hover .highlight {
+    color: #ffffff;
+    text-shadow: 0 0 20px #38bdf8, 
+                 0 0 40px #38bdf8;
+    transform: scale(1.05);
+}
+
+/* Biar tidak melar di dalam list navigasi */
+nav ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.back-btn:hover {
+    background: #38bdf8;
+    color: #0f172a !important;
+    transform: translateX(-3px);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+.bio-card {
+    background: rgba(30, 41, 59, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 4px solid #38bdf8;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+/* Grid Informasi */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-box {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.info-box:hover {
+    border-color: #38bdf8;
+    transform: translateY(-5px);
+}
+
+.info-box h3 {
+    color: #38bdf8;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-box ul {
+    list-style: none;
+}
+
+.info-box ul li {
+    margin-bottom: 12px;
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.info-box ul li strong {
+    color: #f8fafc;
+}
+
 /* Skills Section */
 .skills {
     padding: 100px 10%;
@@ -287,6 +350,127 @@ nav ul li a:hover {
     height: 100%;
     border-radius: 5px;
     background: #38bdf8;
+}
+
+nav ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.btn-bright {
+    color: #0f172a; /* Warna teks gelap */
+    background: #38bdf8; /* Background biru cerah */
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    transition: 0.3s;
+}
+
+.btn-bright:hover {
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.back-btn:hover {
+    background: #38bdf8;
+    color: #0f172a !important;
+    transform: translateX(-3px);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+/* Animasi panah saat hover */
+.back-btn:hover i {
+    transform: translateX(-3px); /* Panah makin menunjuk ke kiri */
+}
+
+/* Responsive: Sembunyikan tulisan di layar sangat kecil jika perlu */
+@media (max-width: 480px) {
+    .back-btn span {
+        display: none; /* Hanya tampilkan ikon di HP kecil */
+    }
+    .back-btn {
+        padding: 10px;
+    }
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.highlight {
+    color: #38bdf8; /* Warna biru cerah */
+}
+
+/* Kartu Proyek */
+.project-card {
+    background: #1e293b;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #38bdf8;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: grayscale(30%);
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+/* Tag Status */
+.status-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #22c55e;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.status-tag.in-progress {
+    background: #eab308; /* Warna kuning untuk on-progress */
+}
+
+/* Tech Stack Labels */
+.tech-stack span {
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    padding: 3px 8px;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    margin-right: 5px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
 /* --- PENGATURAN UNTUK HP (Layar di bawah 768px) --- */
@@ -329,6 +513,45 @@ nav ul li a:hover {
     .skill-container {
         grid-template-columns: 1fr !important;
     }
+}
+
+/* ... Bagian atas tetap sama ... */
+
+.progress.web { width: 70%; }
+.progress.robotics { width: 65%; } /* Sesuai request Bang Dos */
+.progress.uiux { width: 75%; }
+
+/* Tambahan perbaikan visual */
+.about-page {
+    padding: 100px 10%;
+    background: #0f172a;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #1e293b;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #38bdf8;
+}
+
+/* Fix Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #020617;
+    border-top: 1px solid #1e293b;
 }
 
 .web { width: 70%; }
