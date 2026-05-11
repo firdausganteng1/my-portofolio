@@ -45,7 +45,7 @@
 /* Container Utama Video */
 .video-container {
     position: relative;
-    max-width: 800px; /* Lebar maksimal di laptop */
+    max-width: 500px; /* Lebar maksimal di laptop */
     margin: 0 auto;
     border-radius: 20px;
     overflow: hidden;
