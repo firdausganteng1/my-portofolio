@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a; /* Warna dark navy */
+    color: #f8fafc;
+    line-height: 1.6;
+}
+
+/* --- PERBAIKAN NAVIGASI KHUSUS HP --- */
+@media screen and (max-width: 768px) {
+    nav {
+        /* Biar nav bisa nambah tinggi ke bawah kalau menunya turun */
+        height: auto !important; 
+        flex-direction: column !important; 
+        padding: 20px 0 !important;
+        position: fixed !important; /* Biar tetap nempel di atas saat di-scroll */
+        background: #0f172a !important; /* Warna solid biar teks menu gak tabrakan sama konten */
+    }
+
+    .logo {
+        margin-bottom: 15px;
+        font-size: 1.5rem !important;
+    }
+
+    nav ul {
+        display: flex !important; /* MEMAKSA menu untuk muncul */
+        flex-direction: row !important; /* Berjejer ke samping */
+        flex-wrap: wrap !important; /* Kalau gak muat, otomatis turun ke baris baru */
+        justify-content: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+        gap: 0 !important; /* Jarak antar menu */
+    }
+
+    nav ul li {
+        margin: 0 !important;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem !important;
+        color: #38bdf8 !important; /* Warna biru cerah biar jelas */
+        padding: 8px 12px !important;
+        border: 1px solid rgba(56, 189, 248, 0.3); /* Kotak tipis agar terlihat seperti tombol */
+        border-radius: 40px;
+    }
+
+    /* Tambahkan ruang di atas section Hero agar tidak tertutup Menu Nav */
+    .hero {
+        padding-top: 150px !important;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Sesuaikan angka ini dengan tinggi navbar kamu (misal 70px - 90px) */
+    scroll-padding-top: 80px; 
+}
+
+.highlight {
+    color: #38bdf8; /* Warna biru cerah */
+}
+
+.typing-container {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #f8fafc;
+    min-height: 1.6em; /* Menjaga layout tidak goyang saat teks kosong */
+}
+
+.type-text {
+    color: hsl(0, 94%, 49%); /* Warna biru terang neon */
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    font-family: 'Courier New', Courier, monospace; /* Gaya font koding */
+}
+
+.cursor {
+    color: #07acf3;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10% ;
+    background: rgba(15, 23, 42, 0.9);
+    position: fixed;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #38bdf8;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+}
+
+/* Styling Perbaikan untuk Logo Free Fire (Ada Background) */
+.ff-icon {
+    /* Atur ukuran agar proporsional dengan ikon sosial lainnya */
+    height: 30px; /* Sedikit lebih besar dari ikon Font Awesome agar jelas */
+    width: auto; /* Biarkan lebarnya menyesuaikan agar tidak gepeng */
+    
+    object-fit: contain;
+    
+    /* HAPUS filter brightness/invert yang tadi! */
+    /* Kita pakai filter lain untuk efek visual */
+    
+    /* Membuat logo aslinya sedikit lebih terang secara keseluruhan */
+    filter: brightness(1.1) saturate(1.1); 
+    
+    border-radius: 4px; /* Opsional: sedikit melengkung di sudut gambar */
+    
+    transition: all 0.3s ease;
+    vertical-align: middle; /* Menjaga agar sejajar dengan ikon teks */
+}
+
+/* Efek Hover untuk Logo Free Fire */
+.ff-link:hover .ff-icon {
+    transform: translateY(-5px) scale(1.05); /* Sedikit naik dan membesar */
+    
+    /* Memberikan efek glow/bercahaya pada seluruh kotak gambar */
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.4); /* Efek cahaya keemasan mengikuti warna pisau */
+    
+    filter: brightness(1.2) saturate(1.2); /* Lebih terang saat di-hover */
+}
+
+.ff-link {
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.ff-link:active {
+    transform: scale(0.9); /* Efek sedikit memantul saat diklik */
+}
+
+/* Penyesuaian Link untuk jarak yang pas */
+.ff-link {
+    display: inline-block;
+    margin: 0 10px; /* Jarak kiri-kanan dikurangi sedikit agar pas */
+    text-decoration: none; /* Hapus garis bawah jika ada */
+}
+
+/* Slide Kedua Layout */
+.hero-2 {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+    background-color: #0f172a; /* Warna gelap yang sama */
+}
+
+.hero-content-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 50px;
+}
+
+/* Styling Foto Slide 2 */
+.profile-img-2 img {
+    width: 350px; /* Sesuaikan ukuran */
+    height: auto;
+    border-radius: 50px;
+    border: 4px solid #38bdf8;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.3));
+    /* Efek halus agar menyatu dengan background */
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.bio-text {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    max-width: 500px;
+    line-height: 1.8;
+}
+
+.special-tags {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.special-tags span {
+    color: #38bdf8;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.profile-img img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid #38bdf8;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.socials a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 20px 10px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.socials a:hover {
+    transform: translateY(-5px);
+    color: #38bdf8;
+}
+
+/* Skills Section */
+.skills {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.skill-container {
+    max-width: 450px;
+    margin: 40px auto;
+}
+
+.skill-box {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.bar {
+    background: #334155;
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 5px;
+    background: #38bdf8;
+}
+
+/* --- PENGATURAN UNTUK HP (Layar di bawah 768px) --- */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Ubah susunan slide dari samping-sampingan jadi atas-bawah */
+    .hero-content, .hero-content-2 {
+        flex-direction: column !important;
+        text-align: center;
+        padding-top: 100px;
+        gap: 30px;
+    }
+
+    /* 2. Sesuaikan ukuran foto profil di HP agar tidak kebesaran */
+    .profile-img img, .profile-img-2 img {
+        width: 250px !important;
+        height: auto !important;
+    }
+
+    /* 3. Kecilkan ukuran tulisan agar pas di layar HP */
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    .hero-text h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .bio-text {
+        font-size: 1rem !important;
+        margin: 0 auto;
+    }
+
+    /* 4. Atur navigasi agar tidak numpuk */
+    nav ul {
+        display: none; /* Atau bisa diganti dengan menu hamburger nanti */
+    }
+
+    /* 5. Atur container skill agar jadi 1 kolom */
+    .skill-container {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.web { width: 70%; }
+.robotics { width: 60%; }
+.uiux { width: 70%; }
